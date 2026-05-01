@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: recipenest-api
+    runtime: docker
+    dockerfilePath: ./RecipeNest.API/Dockerfile
+    dockerContext: ./RecipeNest.API
+
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+
+      # ── Set these in the Render dashboard (mark as secret) ──────────────────
+      # ConnectionStrings__DefaultConnection
+      #   Your NeonDB connection string
+      #   e.g. Host=...;Database=neondb;Username=...;Password=...;SSL Mode=Require;Trust Server Certificate=true;
+      #
+      # Jwt__Key
+      #   A long random secret string (min 32 chars)
+      #   e.g. MyApp_SuperSecret_Key_ChangeThis_2024!
+      #
+      # AllowedOrigins
+      #   Your Vercel frontend URL (comma-separated if multiple)
+      #   e.g. https://recipenest.vercel.app
+      # ────────────────────────────────────────────────────────────────────────
+      - key: ConnectionStrings__DefaultConnection
+        sync: false
+      - key: Jwt__Key
+        sync: false
+      - key: AllowedOrigins
+        sync: false

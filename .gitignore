@@ -1,0 +1,49 @@
+# ── Build output ───────────────────────────────────────────────────────────────
+bin/
+obj/
+out/
+publish/
+
+# ── User-specific files ────────────────────────────────────────────────────────
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+
+# ── Rider ──────────────────────────────────────────────────────────────────────
+.idea/
+
+# ── NuGet ──────────────────────────────────────────────────────────────────────
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ── Logs & crash dumps ─────────────────────────────────────────────────────────
+*.log
+*.log.*
+Logs/
+logs/
+*.dmp
+
+# ── Secrets — never commit these ───────────────────────────────────────────────
+appsettings.Production.json
+appsettings.Local.json
+secrets.json
+*.pfx
+*.p12
+
+# ── Test results ───────────────────────────────────────────────────────────────
+TestResults/
+coverage/
+*.trx
+*.coverage
+*.coveragexml
+
+# ── Docker ─────────────────────────────────────────────────────────────────────
+.dockerignore
+docker-compose.override.yml
